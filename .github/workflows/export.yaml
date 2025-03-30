@@ -1,0 +1,33 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - '**'
+
+jobs:
+  build:
+    name: Export to Asset-lib
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - uses: chickensoft-games/setup-godot@v1
+      name: 🤖 Setup Godot
+      with:
+          version: ${{vars.GODOT_VERSION}}
+          use-dotnet: false
+          include-templates: false
+
+    - name: import project
+      run: godot --headless -e --quit-after 100
+    - name: Zip up Folder
+      run: ${{vars.ZIPCOMMAND}}
+
+    - name: Upload Zip
+      run: |
+       curl --data-binary "@build.zip" \
+            "${{secrets.uploadUrl}}?godot_id=${{vars.GODOT_ASSET_ID}}&xogot_id=${{vars.XOGOT_ASSET_ID}}&version=${{ github.ref_name }}&tags=${{vars.TAGS}}&iconUrl=${{vars.ICON_URL}}${{vars.EXTRA_ARGS}}" \
+            -H "apiKey: ${{secrets.apiKey}}"
