@@ -656,15 +656,19 @@ color = Color(0, 0, 0, 1)
 [node name="SoundEffects" type="Node" parent="."]
 
 [node name="Step" type="AudioStreamPlayer" parent="SoundEffects"]
+area_mask = 1
 stream = ExtResource("4")
 
 [node name="Jump" type="AudioStreamPlayer" parent="SoundEffects"]
+area_mask = 1
 stream = ExtResource("5")
 
 [node name="Land" type="AudioStreamPlayer" parent="SoundEffects"]
+area_mask = 1
 stream = ExtResource("6")
 
 [node name="Shoot" type="AudioStreamPlayer" parent="SoundEffects"]
+area_mask = 1
 stream = SubResource("35")
 
 [node name="FireCooldown" type="Timer" parent="."]

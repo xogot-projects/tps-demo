@@ -111,6 +111,7 @@ transform = Transform3D(0.999799, 0, -0.0200534, 0, 1, 0, 0.0200534, 0, 0.999799
 size = Vector3(77.8268, 100, 74.2464)
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1008772058]
+area_mask = 1
 stream = ExtResource("8")
 autoplay = true
 
