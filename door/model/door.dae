@@ -12,7 +12,7 @@
 </asset>
 <library_images>
 	<image id="id-image-19" name="doorsimple_d.png">
-		<init_from>doorsimple_d.png</init_from>
+		<init_from>../textures/door_albedo.png</init_from>
 	</image>
 </library_images>
 <library_effects>
@@ -109,42 +109,6 @@
 	</material>
 </library_materials>
 <library_geometries>
-	<geometry id="id-mesh-10" name="Plane.033">
-		<mesh>
-			<source id="id-mesh-10-positions">
-				<float_array id="id-mesh-10-positions-array" count="0"></float_array>
-				<technique_common>
-				<accessor source="#id-mesh-10-positions-array" count="0" stride="3">
-					<param name="X" type="float"/>
-					<param name="Y" type="float"/>
-					<param name="Z" type="float"/>
-				</accessor>
-				</technique_common>
-			</source>
-			<source id="id-mesh-10-normals">
-				<float_array id="id-mesh-10-normals-array" count="0"></float_array>
-				<technique_common>
-				<accessor source="#id-mesh-10-normals-array" count="0" stride="3">
-					<param name="X" type="float"/>
-					<param name="Y" type="float"/>
-					<param name="Z" type="float"/>
-				</accessor>
-				</technique_common>
-			</source>
-			<source id="id-mesh-10-texcoord-0">
-				<float_array id="id-mesh-10-texcoord-0-array" count="0"></float_array>
-				<technique_common>
-				<accessor source="#id-mesh-10-texcoord-0-array" count="0" stride="2">
-					<param name="S" type="float"/>
-					<param name="T" type="float"/>
-				</accessor>
-				</technique_common>
-			</source>
-			<vertices id="id-mesh-10-vertices">
-				<input semantic="POSITION" source="#id-mesh-10-positions"/>
-			</vertices>
-		</mesh>
-	</geometry>
 	<geometry id="id-mesh-12" name="Cube.005">
 		<mesh>
 			<source id="id-mesh-12-positions">
@@ -347,45 +311,6 @@
 	</geometry>
 </library_geometries>
 <library_controllers>
-	<controller id="id-controller-11">
-		<skin source="#id-mesh-10">
-			<bind_shape_matrix> 1.0 8.742277657347586e-08 1.3200472311102659e-14 0.0 8.742277657347586e-08 -1.0 -1.5099580252808664e-07 0.0 0.0 -1.5099580252808664e-07 1.0 0.0 0.0 0.0 0.0 1.0  </bind_shape_matrix>
-			<source id="id-controller-11-joints">
-				<Name_array id="id-controller-11-joints-array" count="7"> id-skelbones-2-0 id-skelbones-2-1 id-skelbones-2-2 id-skelbones-2-3 id-skelbones-2-4 id-skelbones-2-5 id-skelbones-2-6</Name_array>
-				<technique_common>
-				<accessor source="#id-controller-11-joints-array" count="7" stride="1">
-					<param name="JOINT" type="Name"/>
-				</accessor>
-				</technique_common>
-			</source>
-			<source id="id-controller-11-bind_poses">
-				<float_array id="id-controller-11-bind_poses-array" count="112">  1.0 -0.0 0.0 -0.0 -0.0 0.0 1.0 1.0 0.0 -1.0 0.0 -0.0 -0.0 0.0 -0.0 1.0    1.014381077236743e-14 -7.549790126404332e-08 -1.0 0.13347136974334717 1.0 1.3435884227419592e-07 -1.8052298208798973e-14 -1.7000000476837158 1.3435884227419592e-07 -1.0 7.549790126404332e-08 -2.3848684804761433e-07 -0.0 0.0 -0.0 1.0    1.014381077236743e-14 7.549790126404332e-08 1.0 -0.13347136974334717 -1.0 1.3435884227419592e-07 -1.8052298208798973e-14 -1.7000000476837158 -1.3435884227419592e-07 -1.0 7.549790126404332e-08 -2.3848684804761433e-07 -0.0 -0.0 -0.0 1.0    1.0 -0.0 0.0 -0.0 -0.0 0.0 1.0 0.0 0.0 -1.0 0.0 -0.0 -0.0 0.0 -0.0 1.0    1.0 -0.0 0.0 -0.0 -0.0 0.0 1.0 -3.0 0.0 -1.0 0.0 -0.0 -0.0 0.0 -0.0 1.0    1.014381077236743e-14 -7.549790126404332e-08 -1.0 1.5 1.0 1.3435884227419592e-07 -1.5149549170700993e-08 -1.7000000476837158 1.3435884227419592e-07 -1.0 7.549790836947068e-08 -3.416569143155357e-07 -0.0 0.0 -0.0 1.0    1.014381077236743e-14 7.549790126404332e-08 1.0 -1.5 -1.0 1.3435884227419592e-07 -1.5149549170700993e-08 -1.7000000476837158 -1.3435884227419592e-07 -1.0 7.549790836947068e-08 -3.416569143155357e-07 -0.0 -0.0 -0.0 1.0  </float_array>
-				<technique_common>
-				<accessor source="#id-controller-11-bind_poses-array" count="7" stride="16">
-					<param name="TRANSFORM" type="float4x4"/>
-				</accessor>
-				</technique_common>
-			</source>
-			<source id="id-controller-11-skin_weights">
-				<float_array id="id-controller-11-skin_weights-array" count="0"></float_array>
-				<technique_common>
-				<accessor source="#id-controller-11-skin_weights-array" count="0" stride="1">
-					<param name="WEIGHT" type="float"/>
-				</accessor>
-				</technique_common>
-			</source>
-			<joints>
-				<input semantic="JOINT" source="#id-controller-11-joints"/>
-				<input semantic="INV_BIND_MATRIX" source="#id-controller-11-bind_poses"/>
-			</joints>
-			<vertex_weights count="0">
-				<input semantic="JOINT" source="#id-controller-11-joints" offset="0"/>
-				<input semantic="WEIGHT" source="#id-controller-11-skin_weights" offset="1"/>
-				<vcount></vcount>
-				<v></v>
-			</vertex_weights>
-		</skin>
-	</controller>
 	<controller id="id-controller-13">
 		<skin source="#id-mesh-12">
 			<bind_shape_matrix> 1.0 0.0 -5.143294170011255e-16 -3.814697265625e-06 0.0 1.0 0.0 -1.52587890625e-05 1.014381077236743e-14 7.105427357601002e-15 1.0 -1.4711577800256936e-19 0.0 0.0 0.0 1.0  </bind_shape_matrix>
@@ -659,13 +584,6 @@
 			</node>
 			<node id="Plane.007" name="Plane.007" type="NODE">
 				<matrix sid="transform"> 1.0 8.742277657347586e-08 1.3200472311102659e-14 0.0 8.742277657347586e-08 -1.0 -1.5099580252808664e-07 0.0 0.0 -1.5099580252808664e-07 1.0 0.0 0.0 0.0 0.0 1.0  </matrix>
-				<instance_controller url="#id-controller-11">
-					<skeleton>#id-bone-3</skeleton>
-					<skeleton>#id-bone-6</skeleton>
-					<skeleton>#id-bone-7</skeleton>
-					<skeleton>#id-bone-8</skeleton>
-					<skeleton>#id-bone-9</skeleton>
-				</instance_controller>
 			</node>
 			<node id="doorleft-colonly" name="doorleft-colonly" type="NODE">
 				<matrix sid="transform"> -1.014381077236743e-14 -7.549791547489804e-08 -1.0 1.5 1.0 1.3435884227419592e-07 -1.5149549170700993e-08 -2.7000038623809814 1.3435884227419592e-07 -1.0 7.549790836947068e-08 1.4917131011316087e-05 0.0 0.0 0.0 1.0  </matrix>
