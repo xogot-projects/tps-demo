@@ -65,3 +65,20 @@ You can either download from the Godot Asset Library, clone this repository, or
 ## License
 
 See [LICENSE.md](LICENSE.md) for details.
+
+## Xogot packages
+
+The tag-triggered workflow packages ETC2/ASTC texture imports for Xogot on iPad
+and supported Macs. It retains other imported assets for fast startup and omits
+S3TC/BPTC texture copies, shader caches, and local editor state.
+
+After Godot imports the project, `.github/scripts/package_xogot.py` creates
+`build.zip`. The script adjusts texture remaps, format metadata, dependency
+lists, and destination checksums inside the ZIP without editing source assets.
+It rejects missing or stale paired texture imports before upload. The workflow
+overrides `ZIPCOMMAND` locally; shared Actions variables remain unchanged.
+
+Setting forced S3TC/BPTC imports to false does not prevent a desktop import from
+generating its preferred texture format. The packaging step removes those
+copies consistently. This package policy is for Xogot; other export targets may
+need additional texture formats.

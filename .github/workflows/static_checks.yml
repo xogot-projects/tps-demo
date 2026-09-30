@@ -17,3 +17,13 @@ jobs:
       - name: File formatting checks (file_format.sh)
         run: |
           bash ./file_format.sh
+
+  packaging:
+    name: Xogot package checks
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Test packaging
+        run: python3 -B -m unittest discover -s .github/scripts -p 'test_*.py'
