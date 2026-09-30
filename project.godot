@@ -203,7 +203,7 @@ common/physics_interpolation=true
 [rendering]
 
 renderer/rendering_method="forward_plus"
-textures/vram_compression/import_s3tc_bptc=true
+textures/vram_compression/import_s3tc_bptc=false
 textures/vram_compression/import_etc2_astc=true
 rendering_device/driver.windows="d3d12"
 reflections/sky_reflections/texture_array_reflections=false
