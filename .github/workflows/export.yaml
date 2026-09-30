@@ -21,7 +21,6 @@ jobs:
       ICON_URL: ${{ vars.ICON_URL }}
       EXTRA_ARGS: ${{ vars.EXTRA_ARGS }}
       ZIPCOMMAND: python3 .github/scripts/package_xogot.py
-      BUILD_SCRIPT_URL: ${{ vars.BUILD_SCRIPT_URL }}
 
     steps:
     - name: Checkout repository
@@ -37,8 +36,6 @@ jobs:
     - name: Test Xogot packaging
       run: python3 -B -m unittest discover -s .github/scripts -p 'test_*.py'
 
-    - name: Download, chmod, and run build script
-      run: |
-        curl -L "$BUILD_SCRIPT_URL" -o build.sh
-        chmod +x build.sh
-        ./build.sh
+    - name: Build and upload sample project
+      shell: bash
+      run: bash .github/scripts/build.sh
